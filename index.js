@@ -42,8 +42,20 @@ const users = [
 userAge(users);
 
 function sum(a, b) {
-  return a + b;
+  return parseInt(a) + parseInt(b);
 }
 
-let ans = sum(10, 20);
+let ans = sum(10, "20");
 console.log(ans);
+
+function sumFromANumber(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+function printSum(n) {
+  return n + printSum(n - 1);
+}
