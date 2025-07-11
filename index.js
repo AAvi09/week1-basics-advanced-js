@@ -57,5 +57,8 @@ function sumFromANumber(n) {
 }
 
 function printSum(n) {
+  if (n <= 0) {
+    return 0; // Base case: if n is 0 or negative, return 0
+  }
   return n + printSum(n - 1);
 }
