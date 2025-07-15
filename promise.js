@@ -2,6 +2,8 @@
 // setTimeout(fn,3000) is a promise that will return u something in the future.
 // promise is a class that is used to handle asynchronous operations in JavaScript.
 
+const fs = require("fs");
+
 function logName() {
   console.log("chilgozanand");
 }
