@@ -32,3 +32,7 @@ user.set("nickName", "Avi");
 
 const firstName = user.get("name");
 console.log("First Name:", firstName);
+
+const str = "AvinashSharma";
+const lowerCaseStr = str.toLowerCase();
+console.log(lowerCaseStr);
