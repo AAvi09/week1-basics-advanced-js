@@ -19,3 +19,9 @@ class rectangle {
 }
 const rect = new rectangle(10, 5);
 console.log("Area of rectangle:", rect.area());
+
+const now = new Date();
+console.log(now);
+
+console.log("Year:", now.getFullYear());
+console.log("Month:", now.getMonth() + 1); // Months are zero-indexed
