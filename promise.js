@@ -38,3 +38,13 @@ let p1 = promisifiedIsEvenNumber(566)
   .catch((error) => {
     console.log(error);
   });
+
+function raman(ramanKaJawaab) {
+  setTimeout(ramanKaJawaab, 5000);
+}
+
+function callBack() {
+  console.log("I am raman, I will return you after 5 seconds");
+}
+let piraamis = new Promise(raman);
+piraamis.then(callBack);
