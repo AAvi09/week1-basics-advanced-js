@@ -20,3 +20,21 @@ let p = setTimeOutPromisified(5000).then((result) => {
   console.log(result);
 });
 console.log(p);
+
+function promisifiedIsEvenNumber(n) {
+  return new Promise((resolve, reject) => {
+    if (n % 2 === 0) {
+      resolve(`${n}is an even number`);
+    } else {
+      reject(`${n} is not an even number`);
+    }
+  });
+}
+
+let p1 = promisifiedIsEvenNumber(566)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
