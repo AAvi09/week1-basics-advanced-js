@@ -25,3 +25,10 @@ console.log(now);
 
 console.log("Year:", now.getFullYear());
 console.log("Month:", now.getMonth() + 1); // Months are zero-indexed
+
+const user = new Map();
+user.set("name", "Avi");
+user.set("nickName", "Avi");
+
+const firstName = user.get("name");
+console.log("First Name:", firstName);
