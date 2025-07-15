@@ -7,3 +7,16 @@ function logName() {
 }
 
 setTimeout(logName, 3000); // This will log "chilgozanand" after 3 seconds
+
+function setTimeOutPromisified(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Time is up after " + ms + " milliseconds");
+    }, ms);
+  });
+}
+
+let p = setTimeOutPromisified(5000).then((result) => {
+  console.log(result);
+});
+console.log(p);
