@@ -50,3 +50,20 @@ function callBack() {
 }
 let piraamis = new Promise(raman);
 piraamis.then(callBack);
+
+function fileCleaner(fileName) {
+  return new Promise((resolve) => {
+    console.log("cleaning file ", fileName);
+
+    setTimeout(() => {
+      const raw = fs.readFileSync(fileName, "utf-8");
+      const cleaned = raw.split(/\s+/).join(" ").trim();
+      console.log("cleaned file content:", cleaned);
+      resolve(cleaned);
+    }, 5000);
+  });
+}
+
+fileCleaner("a.txt").then((cleanedContent) => {
+  console.log("File cleaned successfully:", cleanedContent);
+});
