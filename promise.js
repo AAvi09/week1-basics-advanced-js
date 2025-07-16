@@ -67,3 +67,26 @@ function fileCleaner(fileName) {
 fileCleaner("a.txt").then((cleanedContent) => {
   console.log("File cleaned successfully:", cleanedContent);
 });
+
+
+function promisifiedSetTimeOut(fn,ms){
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            try {
+                fn();
+                resolve("Function executed successfully after " + ms + " milliseconds");
+            } catch (error) {
+                reject("Error executing function: " + error.message);
+            }
+        }, ms);
+    })
+}
+
+async function solvePromise(){
+    try {
+        const result = await promisifiedSetTimeOut(() => {
+            console.log("Function executed");
+        }, 3000);
+        console.log(result);        
+    }
+}
