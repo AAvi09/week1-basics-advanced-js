@@ -9,18 +9,17 @@
     <h1>TODO-LIST</h1>
     <div>
       <ol>
-        <div id="task-1">
-          <li>gym</li>
-          <button class="del-btn">Delete</button>
-        </div>
-        <div id="task-2">
-          <li>study</li>
-          <button class="del-btn">Delete</button>
-        </div>
-        <div id="task-3">
-          <li>run</li>
-          <button class="del-btn">Delete</button>
-        </div>
+        <li id="task-1">
+          gym <span> <button class="del-btn">Delete</button></span>
+        </li>
+
+        <li id="task-2">
+          study <span> <button class="del-btn">Delete</button></span>
+        </li>
+
+        <li id="task-3">
+          run <span> <button class="del-btn">Delete</button></span>
+        </li>
       </ol>
     </div>
     <input type="text" placeholder="enter task" />
@@ -52,8 +51,8 @@
       const deleteButton = document.querySelectorAll(".del-btn");
       deleteButton.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-          const taskDiv = e.target.parenElementNode;
-          taskDiv.remove();
+          const li = e.target.parentElement.parentElement; // Get the parent <li> element
+          li.remove(); // Remove the <li> element from the list
         });
       });
     </script>

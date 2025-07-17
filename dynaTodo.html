@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <input id="input" type="text" placeholder="enter your task" />
+    <button id="add-btn" onclick="addTask()">
+      <b>Add Task</b>
+    </button>
+
+    <script>
+      const inputEl = document.querySelector("#input");
+
+      const addBtn = document.querySelector("#add-btn");
+      const divEl = document.createElement("div");
+      const olEl = document.createElement("ol");
+      divEl.appendChild(olEl);
+      document.body.appendChild(divEl);
+      function addTask() {
+        const value = inputEl.value;
+        const liEl = document.createElement("li");
+        liEl.innerHTML = value;
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.className = "del-btn";
+        delBtn.addEventListener("click", function () {
+          liEl.remove();
+        });
+        liEl.appendChild(delBtn);
+        olEl.appendChild(liEl);
+        inputEl.value = ""; // Clear the input field after adding the task
+      }
+    </script>
+  </body>
+</html>
