@@ -7,11 +7,22 @@
   </head>
   <body>
     <h1>TODO-LIST</h1>
-    <ol>
-      <li>gym</li>
-      <li>study</li>
-      <li>run</li>
-    </ol>
+    <div>
+      <ol>
+        <div id="task-1">
+          <li>gym</li>
+          <button class="del-btn">Delete</button>
+        </div>
+        <div id="task-2">
+          <li>study</li>
+          <button class="del-btn">Delete</button>
+        </div>
+        <div id="task-3">
+          <li>run</li>
+          <button class="del-btn">Delete</button>
+        </div>
+      </ol>
+    </div>
     <input type="text" placeholder="enter task" />
     <button>
       <b>Add task</b>
@@ -36,6 +47,14 @@
       });
       clearButton.addEventListener("click", () => {
         ol.innerHTML = ""; // Clear all list items
+      });
+      // Delete button functionality
+      const deleteButton = document.querySelectorAll(".del-btn");
+      deleteButton.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const taskDiv = e.target.parenElementNode;
+          taskDiv.remove();
+        });
       });
     </script>
   </body>
